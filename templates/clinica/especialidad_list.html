@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Listado de Especialidades</h2>
+<p><a class="button" href="{{ request.path }}crear/">Crear Especialidad</a></p>
+<table>
+  <thead><tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Acciones</th></tr></thead>
+  <tbody>
+    {% for obj in object_list %}
+    <tr>
+      <td>{{ obj.id }}</td><td>{{ obj.nombre }}</td><td>{{ obj.descripcion }}</td>
+      <td>
+        <a href="{{ request.path }}{{ obj.id }}/editar/">Editar</a>
+        <a href="{{ request.path }}{{ obj.id }}/eliminar/">Eliminar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">Sin registros</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

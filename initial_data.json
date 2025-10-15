@@ -1,0 +1,162 @@
+[
+  {
+    "model": "clinica.aseguradora",
+    "pk": 1,
+    "fields": {
+      "nombre": "Fonasa",
+      "telefono": "600 360 3000"
+    }
+  },
+  {
+    "model": "clinica.aseguradora",
+    "pk": 2,
+    "fields": {
+      "nombre": "Isapre VidaPlus",
+      "telefono": "+56 2 2345 6789"
+    }
+  },
+  {
+    "model": "clinica.especialidad",
+    "pk": 1,
+    "fields": {
+      "nombre": "Cardiología",
+      "descripcion": "Corazón y sistema circulatorio"
+    }
+  },
+  {
+    "model": "clinica.especialidad",
+    "pk": 2,
+    "fields": {
+      "nombre": "Dermatología",
+      "descripcion": "Piel"
+    }
+  },
+  {
+    "model": "clinica.sala",
+    "pk": 1,
+    "fields": {
+      "numero": "101",
+      "piso": 1
+    }
+  },
+  {
+    "model": "clinica.sala",
+    "pk": 2,
+    "fields": {
+      "numero": "202",
+      "piso": 2
+    }
+  },
+  {
+    "model": "clinica.medico",
+    "pk": 1,
+    "fields": {
+      "rut": "12.345.678-9",
+      "nombre": "Dra. Ana Pérez",
+      "especialidad": 1,
+      "sala": 1
+    }
+  },
+  {
+    "model": "clinica.medico",
+    "pk": 2,
+    "fields": {
+      "rut": "9.876.543-2",
+      "nombre": "Dr. Luis Gómez",
+      "especialidad": 2,
+      "sala": 2
+    }
+  },
+  {
+    "model": "clinica.paciente",
+    "pk": 1,
+    "fields": {
+      "rut": "20.111.222-3",
+      "nombre": "Benjamín Soto",
+      "fecha_nacimiento": "1990-05-10",
+      "genero": "M",
+      "aseguradora": 1
+    }
+  },
+  {
+    "model": "clinica.paciente",
+    "pk": 2,
+    "fields": {
+      "rut": "21.444.555-6",
+      "nombre": "María Valdés",
+      "fecha_nacimiento": "1987-11-22",
+      "genero": "F",
+      "aseguradora": 2
+    }
+  },
+  {
+    "model": "clinica.medicamento",
+    "pk": 1,
+    "fields": {
+      "nombre": "Paracetamol 500mg",
+      "descripcion": "Analgésico/antipirético"
+    }
+  },
+  {
+    "model": "clinica.medicamento",
+    "pk": 2,
+    "fields": {
+      "nombre": "Ibuprofeno 400mg",
+      "descripcion": "Antiinflamatorio"
+    }
+  },
+  {
+    "model": "clinica.tratamiento",
+    "pk": 1,
+    "fields": {
+      "nombre": "Dolor leve",
+      "descripcion": "Reposo + hidratación"
+    }
+  },
+  {
+    "model": "clinica.tratamiento",
+    "pk": 2,
+    "fields": {
+      "nombre": "Inflamación",
+      "descripcion": "Reposo + crioterapia"
+    }
+  },
+  {
+    "model": "clinica.consultamedica",
+    "pk": 1,
+    "fields": {
+      "paciente": 1,
+      "medico": 1,
+      "especialidad": 1,
+      "fecha": "2025-09-15T10:00:00Z",
+      "motivo": "Dolor torácico intermitente",
+      "estado": "REAL",
+      "tratamiento": 1
+    }
+  },
+  {
+    "model": "clinica.consultamedica",
+    "pk": 2,
+    "fields": {
+      "paciente": 2,
+      "medico": 2,
+      "especialidad": 2,
+      "fecha": "2025-10-01T14:30:00Z",
+      "motivo": "Erupción cutánea",
+      "estado": "PEND",
+      "tratamiento": 2
+    }
+  },
+  {
+    "model": "clinica.recetamedica",
+    "pk": 1,
+    "fields": {
+      "consulta": 1,
+      "indicaciones": "Paracetamol cada 8 horas por 3 días",
+      "fecha_emision": "2025-09-15",
+      "medicamentos": [
+        1
+      ]
+    }
+  }
+]

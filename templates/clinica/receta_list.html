@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Listado de Recetas</h2>
+<p><a class="button" href="{{ request.path }}crear/">Crear Receta</a></p>
+<table>
+  <thead><tr><th>ID</th><th>Consulta</th><th>Indicaciones</th><th>Emisión</th><th>Acciones</th></tr></thead>
+  <tbody>
+    {% for obj in object_list %}
+    <tr>
+      <td>{{ obj.id }}</td><td>{{ obj.consulta }}</td><td>{{ obj.indicaciones }}</td><td>{{ obj.fecha_emision }}</td>
+      <td>
+        <a href="{{ request.path }}{{ obj.id }}/editar/">Editar</a>
+        <a href="{{ request.path }}{{ obj.id }}/eliminar/">Eliminar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">Sin registros</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

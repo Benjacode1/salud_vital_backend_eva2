@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title|default:"Salud Vital" }}</title>
+  <link rel="stylesheet" href="{{ STATIC_URL }}base.css" />
+</head>
+<body>
+  <header>
+    <h1>Clínica Salud Vital Ltda.</h1>
+    <nav>
+      <a href="/web/">Inicio</a> |
+      <a href="/web/especialidad/">Especialidades</a> |
+      <a href="/web/medico/">Médicos</a> |
+      <a href="/web/paciente/">Pacientes</a> |
+      <a href="/web/consulta/">Consultas</a> |
+      <a href="/web/tratamiento/">Tratamientos</a> |
+      <a href="/web/medicamento/">Medicamentos</a> |
+      <a href="/web/receta/">Recetas</a> |
+      <a href="/docs/">Docs API</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer style="margin-top:2rem; border-top:1px solid #ccc; padding-top:0.5rem;">
+    <small>{{ FOOTER_NOMBRE }} — {{ FOOTER_SECCION }} — {{ FOOTER_ANO }}</small>
+  </footer>
+</body>
+</html>
