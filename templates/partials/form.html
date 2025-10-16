@@ -1,0 +1,28 @@
+{% load static %}
+<form method="post" class="card shadow-sm">
+  <div class="card-body">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    {% for field in form %}
+      <div class="mb-3">
+        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% if field.errors %}
+          {{ field.as_widget(attrs={"class": "form-control is-invalid"}) }}
+          <div class="invalid-feedback">{{ field.errors|striptags }}</div>
+        {% else %}
+          {{ field.as_widget(attrs={"class": "form-control"}) }}
+        {% endif %}
+        {% if field.help_text %}
+          <div class="form-text">{{ field.help_text }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="card-footer bg-white d-flex gap-2">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href=".." class="btn btn-outline-secondary">Cancelar</a>
+  </div>
+</form>

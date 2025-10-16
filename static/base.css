@@ -3,3 +3,8 @@ table { border-collapse: collapse; width: 100%; }
 td, th { border: 1px solid #ddd; padding: 8px; }
 form div { margin-bottom: 8px; }
 a.button, button { padding: 6px 10px; display: inline-block; margin-right: 6px; }
+
+/* Ajustes ligeros sobre Bootstrap */
+table td, table th { vertical-align: middle; }
+.card { border-radius: 0.75rem; }
+.navbar-brand { letter-spacing: .3px; }
